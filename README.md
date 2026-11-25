@@ -18,7 +18,7 @@ Android apps live in `apps/<app-name>/`.
 
 | App | Description | Status |
 | --- | --- | --- |
-| [Control de Gastos](apps/control-gastos/) | Record expenses and review them by month and category. Everything is stored locally on your phone. | In development |
+| [Control de Gastos](apps/control-gastos/) | Record expenses and review them by month and category. Everything is stored locally on your phone. | released 👍 |
 
 ## DIY & Alternatives
 
