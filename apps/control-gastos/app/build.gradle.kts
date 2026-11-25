@@ -1,9 +1,22 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room)
 }
+
+val releaseKeystore = providers.fileContents(
+    rootProject.layout.projectDirectory.file("keystore.properties")
+).asBytes.orNull?.let { content ->
+    Properties().apply { content.inputStream().use { load(it) } }
+}
+
+fun Properties.requiredValue(key: String): String =
+    requireNotNull(getProperty(key)?.takeIf { it.isNotBlank() }) {
+        "Missing '$key' in keystore.properties"
+    }
 
 android {
     namespace = "com.example.controlgastos"
@@ -12,20 +25,34 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.controlgastos"
+        applicationId = "io.github.mythossb.controlgastos"
         minSdk = 26
         targetSdk = 37
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    val releaseSigning = releaseKeystore?.let { credentials ->
+        signingConfigs.create("release") {
+            storeFile = rootProject.file(credentials.requiredValue("storeFile"))
+            storePassword = credentials.requiredValue("storePassword")
+            keyAlias = credentials.requiredValue("keyAlias")
+            keyPassword = credentials.requiredValue("keyPassword")
+        }
+    }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
     buildTypes {
         release {
+            signingConfig = releaseSigning
             optimization {
                 enable = true
-                packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
             }
         }
     }
