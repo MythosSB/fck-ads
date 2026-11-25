@@ -1,0 +1,29 @@
+# Android and Gradle build output
+build/
+.gradle/
+local.properties
+captures/
+*.apk
+*.aab
+.kotlin/
+
+# Android Studio project files and personal settings
+**/.idea/*
+!**/.idea/codeStyles/
+!**/.idea/inspectionProfiles/
+!**/.idea/runConfigurations/
+*.iml
+
+# Signing keys and local signing configuration
+*.jks
+*.keystore
+keystore.properties
+
+# Node.js dependencies
+node_modules/
+
+# Operating system files
+Thumbs.db
+.DS_Store
+
+# Keep Room schemas and the Gradle Wrapper tracked.

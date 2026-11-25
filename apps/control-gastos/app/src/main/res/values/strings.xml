@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Control de Gastos</string>
+    <string name="inicio">Inicio</string>
+    <string name="resumen">Resumen</string>
+    <string name="agregar_gasto">Agregar gasto</string>
+    <string name="nuevo_gasto">Nuevo gasto</string>
+    <string name="editar_gasto">Editar gasto</string>
+    <string name="volver">Volver</string>
+    <string name="monto">Monto</string>
+    <string name="simbolo_peso">$</string>
+    <string name="categoria">Categoría</string>
+    <string name="fecha">Fecha</string>
+    <string name="nota_opcional">Nota (opcional)</string>
+    <string name="contador_nota">%1$d/%2$d</string>
+    <string name="guardar">Guardar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="confirmar_eliminar">¿Eliminar este gasto?</string>
+    <string name="confirmar_descartar">¿Descartar cambios?</string>
+    <string name="descartar">Descartar</string>
+    <string name="seguir_editando">Seguir editando</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="gasto_no_encontrado">El gasto ya no existe.</string>
+    <string name="error_cargar_formulario">No se pudo cargar el formulario.</string>
+    <string name="error_guardar_gasto">No se pudo guardar el gasto.</string>
+    <string name="error_eliminar_gasto">No se pudo eliminar el gasto.</string>
+    <string name="mes_anterior">Mes anterior</string>
+    <string name="mes_siguiente">Mes siguiente</string>
+    <string name="total_del_mes">Total del mes</string>
+    <string name="sin_gastos_del_mes">No hay gastos en este mes</string>
+    <string name="indicacion_agregar_gasto">Toca + para agregar uno</string>
+    <string name="resumen_monto_porcentaje">%1$s · %2$s</string>
+    <string name="resumen_porcentaje">%1$d%%</string>
+    <string name="resumen_porcentaje_menor_uno" formatted="false">&lt;1%</string>
+    <string name="resumen_barra_porcentaje">%1$s, %2$d por ciento</string>
+    <string name="resumen_barra_menor_uno">%1$s, menos de 1 por ciento</string>
+    <string name="validacion_monto">El monto debe estar entre 1 y %1$s centavos.</string>
+    <string name="validacion_nota">La nota debe tener como máximo %1$s caracteres.</string>
+    <string name="validacion_fecha">La fecha no puede ser futura.</string>
+    <string name="validacion_categoria">La categoría seleccionada no existe.</string>
+</resources>
